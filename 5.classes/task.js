@@ -81,9 +81,9 @@ class Library {
         let findBook = this.books.find(book => book[type] === value);
         if (typeof findBook === 'object') {
             return findBook;
-        } else {
-            return null;
         }
+
+        return null;
     }
 
     giveBookByName(bookName) {
@@ -92,9 +92,9 @@ class Library {
             let index = this.books.indexOf(giveBook);
             this.books.splice(index, 1);
             return giveBook;
-        } else {
-            return null;
         }
+
+        return null;
     }
 }
 
