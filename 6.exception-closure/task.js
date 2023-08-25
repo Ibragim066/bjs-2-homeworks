@@ -1,10 +1,10 @@
 ﻿// Задача 1
 function parseCount(value) {
-    const valueParsed = Number.parseFloat(value);;
+    const valueParsed = Number.parseFloat(value);
     if (Number.isNaN(valueParsed)) {
         throw new Error("Невалидное значение")
     }
-    return parseValue;
+    return valueParsed;
 }
 
 function validateCount(value) {
@@ -30,15 +30,14 @@ class Triangle {
             this.thirdSide = thirdSide;
         }
     }
-
     get perimeter() {
         return this.firstSide + this.secondSide + this.thirdSide;
     }
 
     get area() {
-        const p = this.perimeter();
+        const p = this.perimeter / 2;
         const area = Math.sqrt(
-            p * (p - this.firstSide) * (p - this.secondSide) * (p * this.thirdSide)
+            p * (p - this.firstSide) * (p - this.secondSide) * (p - this.thirdSide)
         )
         return Number(area.toFixed(3));
     }
@@ -46,8 +45,8 @@ class Triangle {
 
 function getTriangle(firstSide, secondSide, thirdSide) {
     try {
-        const triangle = new Triangle(firstSide, secondSide, thirdSide);
-        return triangle;
+        const triangle = new Triangle(firstSide, secondSide, thirdSide)
+        return Object.freeze(triangle)
     } catch (error) {
         return {
             get perimeter() {
@@ -59,3 +58,4 @@ function getTriangle(firstSide, secondSide, thirdSide) {
         }
     }
 }
+
