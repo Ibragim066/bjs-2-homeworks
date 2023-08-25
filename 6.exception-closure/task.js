@@ -44,9 +44,9 @@ class Triangle {
     }
 }
 
-function getTriangle(lengthSide1, lengthSide2, lengthSide3) {
+function getTriangle(firstSide, secondSide, thirdSide) {
     try {
-        const triangle = new Triangle(lengthSide1, lengthSide2, lengthSide3);
+        const triangle = new Triangle(firstSide, secondSide, thirdSide);
         return triangle;
     } catch (error) {
         return {
