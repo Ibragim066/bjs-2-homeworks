@@ -87,15 +87,12 @@ class Library {
     }
 
     giveBookByName(bookName) {
-        let giveBook = this.books.find(book => book.name === bookName);
-        if (typeof giveBook === 'object') {
-            let index = this.books.indexOf(giveBook);
-            this.books.splice(index, 1);
-            return giveBook;
-        }
-
-        return null;
+        const book = this.findBookBy("name", bookName);
+        if (!book) return null;
+        this.books = this.books.filter((item) => item.name !== bookName);
+        return book;
     }
+
 }
 
 // Задача 3

@@ -24,11 +24,11 @@ class Triangle {
             ((secondSide + thirdSide) <= firstSide)) {
             throw new Error("Треугольник с такими сторонами не существует");
         }
-        else {
-            this.firstSide = firstSide;
-            this.secondSide = secondSide;
-            this.thirdSide = thirdSide;
-        }
+
+        this.firstSide = firstSide;
+        this.secondSide = secondSide;
+        this.thirdSide = thirdSide;
+
     }
     get perimeter() {
         return this.firstSide + this.secondSide + this.thirdSide;
@@ -46,7 +46,7 @@ class Triangle {
 function getTriangle(firstSide, secondSide, thirdSide) {
     try {
         const triangle = new Triangle(firstSide, secondSide, thirdSide)
-        return Object.freeze(triangle)
+        return triangle;
     } catch (error) {
         return {
             get perimeter() {
